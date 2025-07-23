@@ -13,7 +13,6 @@ This project is a **SOAP-based web service** for retrieving **stocks market data
     <soapenv:Body>
         <soap:GetStockRequest>
             <soap:stockSymbol>HEKTS</soap:stockSymbol>
-            <soap:stockSymbol>XXXXX</soap:stockSymbol>
             <soap:stockSymbol>SASA</soap:stockSymbol>
         </soap:GetStockRequest>
     </soapenv:Body>
