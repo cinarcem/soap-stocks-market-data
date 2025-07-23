@@ -8,10 +8,16 @@ This project is a **SOAP-based web service** for retrieving **stocks market data
 ### Request Example
 
 ```xml
-<GetStockRequest xmlns="https://soap-stocks.up.railway.app">
-    <stockSymbol>ASELS</stockSymbol>
-    <stockSymbol>THYAO</stockSymbol>
-</GetStockRequest>
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:soap="https://soap-stocks.up.railway.app">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <soap:GetStockRequest>
+            <soap:stockSymbol>HEKTS</soap:stockSymbol>
+            <soap:stockSymbol>XXXXX</soap:stockSymbol>
+            <soap:stockSymbol>SASA</soap:stockSymbol>
+        </soap:GetStockRequest>
+    </soapenv:Body>
+</soapenv:Envelope>
 ```
 ### Important Notice
 ⚠️ **This API is for demonstration purposes only**  
