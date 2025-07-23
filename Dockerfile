@@ -1,20 +1,19 @@
-FROM gradle:8.12.1-jdk17 AS build
+FROM maven:3.9.6-eclipse-temurin-17 AS build
 WORKDIR /app
 
-COPY build.gradle settings.gradle ./
-RUN gradle dependencies --no-daemon
+COPY pom.xml ./
+RUN mvn dependency:go-offline
 
 COPY src ./src
-
-RUN gradle build -x test --no-daemon
+RUN mvn clean package -DskipTests
 
 FROM eclipse-temurin:17-jre-alpine
 WORKDIR /app
 
 EXPOSE ${PORT}
-EXPOSE ${STOCK_DATA_URL}
 
-COPY --from=build /app/build/libs/*.jar app.jar
+# Oluşturulan JAR dosyasını kopyala (target klasöründe oluşur)
+COPY --from=build /app/target/*.jar app.jar
 
 ENV TZ=Europe/Istanbul
 
