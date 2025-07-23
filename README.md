@@ -3,7 +3,7 @@
 This project is a **SOAP-based web service** for retrieving **stocks market data**. The service allows clients to request information about one or more stock symbols and receive detailed responses including price, volume, and daily change metrics.
 
 
-**WSDL Endpoint:** `https://soap-stocks.up.railway.app`
+**WSDL Endpoint:** `https://soap-stocks.up.railway.app/soap/stocks.wsdl`
 
 ### Request Example
 
